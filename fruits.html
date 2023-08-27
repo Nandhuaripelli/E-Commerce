@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruits</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .fruit-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+      }
+      .fruit-card {
+        width: 250px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .fruit-card:hover {
+        transform: translateY(-5px);
+      }
+      .fruit-card img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .search-results {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Align cards horizontally */
+        gap: 20px; /* Add some spacing between cards */
+      }
+
+      .search-container {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">My Store</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="fruits.html">Fruits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vegetables.html">Vegetables</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="orders.html">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cart</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for a fruit" />
+    </div>
+    <div class="container fruit-container mt-4" id="fruitResults">
+      <!-- Fruits will be displayed here based on search results -->
+    </div>
+
+    <!-- ... remaining HTML code ... -->
+    <div class="search-results" id="searchResults">
+      <!-- Search results will be displayed here -->
+
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="pmgrnt.jpg" alt="Apple" />
+              <h4 class="mt-2">Pomogranates</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="oranges.jpg" alt="Apple" />
+              <h4 class="mt-2">Oranges</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="mangoes.jpg" alt="Apple" />
+              <h4 class="mt-2">Mangoes</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="apples.jpg" alt="Apple" />
+              <h4 class="mt-2">Apples</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="pineapples.jpg" alt="Apple" />
+              <h4 class="mt-2">Pineapples</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="kiwi.jpg" alt="Apple" />
+              <h4 class="mt-2">Kiwis</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="bananas.jpg" alt="Apple" />
+              <h4 class="mt-2">Bananas</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="grapes.jpg" alt="Apple" />
+              <h4 class="mt-2">Grapes</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="strawberry.jpg" alt="Apple" />
+              <h4 class="mt-2">Strawberries</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+      <div class="container fruit-container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="fruit-card">
+              <img src="watermelon.jpg" alt="Apple" />
+              <h4 class="mt-2">Watermelon</h4>
+              <p class="text-muted">Quantity: 10</p>
+              <p class="text-success">Price: $1.99</p>
+            </div>
+          </div>
+          <!-- Repeat similar code for other fruits -->
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

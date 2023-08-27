@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders - My Store</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Navigation bar content, same as in your original code -->
+    </nav>
+
+    <div class="container mt-5">
+      <h2>Order History</h2>
+      <div class="row" id="orderList">
+        <!-- Cards will be dynamically added here using JavaScript -->
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const orderList = document.getElementById("orderList");
+
+        // Sample data for orders
+        const orders = [
+          {
+            id: 1,
+            image: "capci.jpg",
+            orderNumber: "Order #123",
+            date: "July 10, 2023",
+          },
+          {
+            id: 1,
+            image: "tomatoes.jpg",
+            orderNumber: "Order #123",
+            date: "July 10, 2023",
+          },
+
+          {
+            id: 1,
+            image: "mangoes.jpg",
+            orderNumber: "Order #123",
+            date: "July 10, 2023",
+          },
+
+          {
+            id: 1,
+            image: "carrots.jpg",
+            orderNumber: "Order #123",
+            date: "July 10, 2023",
+          },
+          {
+            id: 1,
+            image: "cauliflower.jpg",
+            orderNumber: "Order #123",
+            date: "July 10, 2023",
+          },
+          {
+            id: 1,
+            image: "bananas.jpg",
+            orderNumber: "Order #123",
+            date: "July 10, 2023",
+          },
+          {
+            id: 1,
+            image: "carrots.jpg",
+            orderNumber: "Order #123",
+            date: "July 10, 2023",
+          },
+
+          {
+            id: 1,
+            image: "bananas.jpg",
+            orderNumber: "Order #123",
+            date: "July 10, 2023",
+          },
+          {
+            id: 1,
+            image: "cauliflower.jpg",
+            orderNumber: "Order #123",
+            date: "July 10, 2023",
+          },
+
+          // Add more order data here
+        ];
+
+        // Function to create a card for an order
+        // function createOrderCard(order) {
+        //   const card = document.createElement("div");
+        //   card.classList.add("col-md-4");
+
+        //   card.innerHTML = `
+        //   <div class="card">
+        //     <img src="${order.image}" class="card-img-top" alt="${order.orderNumber}">
+        //     <div class="card-body">
+        //       <h5 class="card-title">${order.orderNumber}</h5>
+        //       <p class="card-text">Date: ${order.date}</p>
+        //       <button class="btn btn-primary">Track</button>
+        //       <button class="btn btn-danger" data-order-id="${order.id}">Cancel</button>
+        //     </div>
+        //   </div>
+        // `;
+
+        //   // Add event listener for the Cancel button
+        //   const cancelButton = card.querySelector(".btn-danger");
+        //   cancelButton.addEventListener("click", function () {
+        //     const orderId = parseInt(
+        //       cancelButton.getAttribute("data-order-id")
+        //     );
+        //     const orderCard = cancelButton.closest(".col-md-4");
+        //     orderList.removeChild(orderCard);
+        //   });
+
+        //   return card;
+        // }
+
+        function createOrderCard(order) {
+          const card = document.createElement("div");
+          card.classList.add("col-md-3"); // Adjusted class to col-md-3
+
+          card.innerHTML = `
+    <div class="card">
+      <img src="${order.image}" class="card-img-top" alt="${order.orderNumber}">
+      <div class="card-body d-flex flex-column"> <!-- Added d-flex flex-column classes -->
+        <h5 class="card-title">${order.orderNumber}</h5>
+        <p class="card-text">Date: ${order.date}</p>
+        <button class="btn btn-primary" data-order-id="${order.id}">Track</button>
+        <button class="btn btn-danger" data-order-id="${order.id}">Cancel</button>
+      </div>
+    </div>
+  `;
+
+          // Add event listener for the Track button
+          const trackButton = card.querySelector(".btn-primary");
+          trackButton.addEventListener("click", function () {
+            alert("Your order is on its way and will reach you in 15 minutes!");
+          });
+
+          // Add event listener for the Cancel button
+          const cancelButton = card.querySelector(".btn-danger");
+          cancelButton.addEventListener("click", function () {
+            const orderId = parseInt(
+              cancelButton.getAttribute("data-order-id")
+            );
+            const orderCard = cancelButton.closest(".col-md-3"); // Adjusted class to col-md-3
+            orderList.removeChild(orderCard);
+          });
+
+          return card;
+        }
+
+        // Populate the orderList with cards
+        orders.forEach((order) => {
+          orderList.appendChild(createOrderCard(order));
+        });
+      });
+    </script>
+
+    <!-- ... Rest of your HTML ... -->
+
+    //for track button
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const orderList = document.getElementById("orderList");
+        function createOrderCard(order) {
+          const card = document.createElement("div");
+          card.classList.add("col-md-4");
+
+          card.innerHTML = `
+          <div class="card">
+            <img src="${order.image}" class="card-img-top" alt="${order.orderNumber}">
+            <div class="card-body">
+              <h5 class="card-title">${order.orderNumber}</h5>
+              <p class="card-text">Date: ${order.date}</p>
+              <button class="btn btn-primary" data-order-id="${order.id}">Track</button>
+              <button class="btn btn-danger" data-order-id="${order.id}">Cancel</button>
+            </div>
+          </div>
+        `;
+
+          // Add event listener for the Track button
+          const trackButton = card.querySelector(".btn-primary");
+          trackButton.addEventListener("click", function () {
+            alert("Your order is on its way and will reach you in 15 minutes!");
+          });
+
+          // Add event listener for the Cancel button
+          const cancelButton = card.querySelector(".btn-danger");
+          cancelButton.addEventListener("click", function () {
+            const orderId = parseInt(
+              cancelButton.getAttribute("data-order-id")
+            );
+            const orderCard = cancelButton.closest(".col-md-4");
+            orderList.removeChild(orderCard);
+          });
+
+          return card;
+        }
+
+        // Populate the orderList with cards
+        orders.forEach((order) => {
+          orderList.appendChild(createOrderCard(order));
+        });
+      });
+    </script>
+  </body>
+</html>
